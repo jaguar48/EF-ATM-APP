@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lnuPGGKVGS+hXL+ikx8psrRjfEB/QhiM72D/I7srmD5SI7ymVVD6n0MSOuUsUnqBVuLe9KiOR4Adb580mIFMuw==",
+  "dgSpecHash": "9t3BFT15KN/JEpOa+SiMf7AlDSe1a6zfTG0KHSxiM/7Q2gH6z+8v5AEgLoQ+hPWKF/aVdx0NeHB3HZNaiMo0Iw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj",
+  "projectFilePath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\Test EFKore\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

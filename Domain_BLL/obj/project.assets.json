@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj",
+      "projectUniqueName": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\Test EFKore\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj",
       "projectName": "Domain_BLL",
-      "projectPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj",
+      "projectPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\Test EFKore\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj",
       "packagesPath": "C:\\Users\\STephenScripts\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\Domain_BLL\\obj\\",
+      "outputPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\Test EFKore\\EF-ATM-APP\\Domain_BLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,8 +58,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj": {
-              "projectPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj"
+            "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\Test EFKore\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj": {
+              "projectPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\Test EFKore\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj"
             }
           }
         }

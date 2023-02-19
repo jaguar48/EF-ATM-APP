@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
+      "projectUniqueName": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\Test EFKore\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
       "projectName": "Data_PLL",
-      "projectPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
+      "projectPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\Test EFKore\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
       "packagesPath": "C:\\Users\\STephenScripts\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\Data_PLL\\obj\\",
+      "outputPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\Test EFKore\\EF-ATM-APP\\Data_PLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
