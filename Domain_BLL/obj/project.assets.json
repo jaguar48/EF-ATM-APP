@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "Data_PLL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Data_PLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Data_PLL.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Data_PLL/1.0.0": {
+      "type": "project",
+      "path": "../Data_PLL/Data_PLL.csproj",
+      "msbuildProject": "../Data_PLL/Data_PLL.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Data_PLL >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\STephenScripts\\.nuget\\packages\\": {},
@@ -14,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\EFCoreATM_APP\\Domain\\Domain_BLL.csproj",
+      "projectUniqueName": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj",
       "projectName": "Domain_BLL",
-      "projectPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\EFCoreATM_APP\\Domain\\Domain_BLL.csproj",
+      "projectPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj",
       "packagesPath": "C:\\Users\\STephenScripts\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\EFCoreATM_APP\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\Domain_BLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -38,7 +57,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj": {
+              "projectPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
