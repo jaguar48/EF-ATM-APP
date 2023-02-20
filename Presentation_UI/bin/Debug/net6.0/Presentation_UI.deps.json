@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Presentation_UI/1.0.0": {
+        "dependencies": {
+          "Domain_BLL": "1.0.0"
+        },
+        "runtime": {
+          "Presentation_UI.dll": {}
+        }
+      },
+      "Data_PLL/1.0.0": {
+        "runtime": {
+          "Data_PLL.dll": {}
+        }
+      },
+      "Domain_BLL/1.0.0": {
+        "dependencies": {
+          "Data_PLL": "1.0.0"
+        },
+        "runtime": {
+          "Domain_BLL.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Presentation_UI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Data_PLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain_BLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
