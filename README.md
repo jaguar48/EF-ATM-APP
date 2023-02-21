@@ -1,14 +1,14 @@
-# > EF-ATM-APP
-We are using code first approach to create a wonderful application that simulates the Automated Teller Machine (ATM).
-## ![#f03c15] Access to Users
-##### This application will be able to create new Users
-##### Transfer money to another user
-##### Withdraw currency
-##### Deposit money
-##### Print Receipts for each transactions
-##### Buy airtime
-## ![#f03c15] Access to Admins
-##### Delete Users (Admins only)
-##### View transactions between users
-##### Load money
-##### Activate deactivated users
+# EF-ATM-APP
+> We are using code first approach to create a wonderful application that simulates the Automated Teller Machine (ATM).
+## ![#f03c15] `Access to Users`
+- [ ] _This application will be able to create new Users_
+- [ ] _Transfer money to another user_
+- [ ] _Withdraw currency_
+- [ ] _Deposit money_
+- [ ] _Print Receipts for each transactions_
+- [ ] _Buy airtime_
+## Access to Admins
+- [ ] _Delete Users (Admins only)_
+- [ ] _View transactions between users_
+- [ ] _Load money_
+- [ ] _Activate deactivated users_
