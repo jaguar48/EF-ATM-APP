@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj": {}
+    "C:\\Users\\HP\\source\\repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj": {
+    "C:\\Users\\HP\\source\\repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
         "projectName": "Data_PLL",
-        "projectPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
+        "projectPath": "C:\\Users\\HP\\source\\repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\obj\\",
+        "outputPath": "C:\\Users\\HP\\source\\repos\\EF-ATM-APP\\Data_PLL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
