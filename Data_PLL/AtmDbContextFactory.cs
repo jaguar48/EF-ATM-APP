@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using System;
 
 namespace Data_PLL
 {
@@ -14,11 +15,33 @@ namespace Data_PLL
         {
             var optionsBuilder = new DbContextOptionsBuilder<AtmDbContext>();
 
-            string ConnectionString = @"Data Source=LAPTOP-AI62M7MS\SQLEXPRESS;Initial Catalog=EFCoreAtmAppDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string connectionString = @"Data Source=.;Initial Catalog=EFCoreAtmAppDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
-            optionsBuilder.UseSqlServer(ConnectionString);
+            optionsBuilder.UseSqlServer(connectionString, options =>
+            {
+                options.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
+            });
+
+            // Test the connection and print the connection status
+            using (var dbContext = new AtmDbContext(optionsBuilder.Options))
+            {
+                try
+                {
+                    dbContext.Database.OpenConnection();
+                    Console.WriteLine("Database connection successful.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Database connection failed. Error: {ex.Message}");
+                }
+                finally
+                {
+                    dbContext.Database.CloseConnection();
+                }
+            }
 
             return new AtmDbContext(optionsBuilder.Options);
         }
+
     }
 }

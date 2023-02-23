@@ -13,8 +13,6 @@ namespace Data_PLL.Entities
         public string TransactionType { get; set; }
         public string Remark { get; set; }
 
-
-
         public int CustomersId { get; set; }
         public Customers CustomersNavigation { get; set; }
 

@@ -1157,6 +1157,19 @@
         "runtime": {
           "bin/placeholder/Data_PLL.dll": {}
         }
+      },
+      "Domain_BLL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Data_PLL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Domain_BLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain_BLL.dll": {}
+        }
       }
     }
   },
@@ -3482,28 +3495,33 @@
       "type": "project",
       "path": "../Data_PLL/Data_PLL.csproj",
       "msbuildProject": "../Data_PLL/Data_PLL.csproj"
+    },
+    "Domain_BLL/1.0.0": {
+      "type": "project",
+      "path": "../Domain_BLL/Domain_BLL.csproj",
+      "msbuildProject": "../Domain_BLL/Domain_BLL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Data_PLL >= 1.0.0",
+      "Domain_BLL >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MyPC\\.nuget\\packages\\": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MyPC\\Source\\Repos\\EF-ATM-APP\\Presentation_UI\\Presentation_UI.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Presentation_UI\\Presentation_UI.csproj",
       "projectName": "Presentation_UI",
-      "projectPath": "C:\\Users\\MyPC\\Source\\Repos\\EF-ATM-APP\\Presentation_UI\\Presentation_UI.csproj",
-      "packagesPath": "C:\\Users\\MyPC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MyPC\\Source\\Repos\\EF-ATM-APP\\Presentation_UI\\obj\\",
+      "projectPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Presentation_UI\\Presentation_UI.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Presentation_UI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MyPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3517,8 +3535,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\MyPC\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj": {
-              "projectPath": "C:\\Users\\MyPC\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj"
+            "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj": {
+              "projectPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj"
             }
           }
         }
@@ -3556,7 +3574,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

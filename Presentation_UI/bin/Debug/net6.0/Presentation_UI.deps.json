@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Presentation_UI/1.0.0": {
         "dependencies": {
-          "Data_PLL": "1.0.0",
+          "Domain_BLL": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "7.0.3"
         },
         "runtime": {
@@ -701,6 +701,14 @@
         "runtime": {
           "Data_PLL.dll": {}
         }
+      },
+      "Domain_BLL/1.0.0": {
+        "dependencies": {
+          "Data_PLL": "1.0.0"
+        },
+        "runtime": {
+          "Domain_BLL.dll": {}
+        }
       }
     }
   },
@@ -1180,6 +1188,11 @@
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
     },
     "Data_PLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain_BLL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

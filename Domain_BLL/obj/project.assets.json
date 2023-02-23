@@ -3242,19 +3242,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MyPC\\.nuget\\packages\\": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MyPC\\Source\\Repos\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj",
       "projectName": "Domain_BLL",
-      "projectPath": "C:\\Users\\MyPC\\Source\\Repos\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj",
-      "packagesPath": "C:\\Users\\MyPC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MyPC\\Source\\Repos\\EF-ATM-APP\\Domain_BLL\\obj\\",
+      "projectPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Domain_BLL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\MyPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3268,8 +3268,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\MyPC\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj": {
-              "projectPath": "C:\\Users\\MyPC\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj"
+            "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj": {
+              "projectPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj"
             }
           }
         }
@@ -3299,7 +3299,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
