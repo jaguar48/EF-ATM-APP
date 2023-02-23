@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain_BLL.Interfaces
 {
-    internal class ITransaction
+    public interface ITransaction
     {
     }
 }
