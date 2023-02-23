@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\Test EFKore\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj": {}
+    "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\Test EFKore\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj": {
+    "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\Test EFKore\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
         "projectName": "Data_PLL",
-        "projectPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\Test EFKore\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
-        "packagesPath": "C:\\Users\\STephenScripts\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\STephenScripts\\Desktop\\C# Apps\\Test EFKore\\EF-ATM-APP\\Data_PLL\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\STephenScripts\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +39,28 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -59,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

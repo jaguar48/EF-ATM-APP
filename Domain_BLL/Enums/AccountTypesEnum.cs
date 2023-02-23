@@ -8,5 +8,6 @@ namespace Domain_BLL.Enums
 {
     enum AccountTypesEnum
     {
+
     }
 }
