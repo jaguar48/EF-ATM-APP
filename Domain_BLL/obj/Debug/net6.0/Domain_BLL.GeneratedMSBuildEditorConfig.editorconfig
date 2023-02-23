@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Domain_BLL
-build_property.ProjectDir = C:\Users\STephenScripts\Desktop\C# Apps\Test EFKore\EF-ATM-APP\Domain_BLL\
+build_property.ProjectDir = C:\Users\MyPC\Source\Repos\EF-ATM-APP\Domain_BLL\

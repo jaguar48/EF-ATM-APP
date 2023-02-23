@@ -1,8 +1,22 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Data_PLL;
 
-string[] list = new string[] { "Stanley Okonkwo", "Chinenye Rose Okeke", "Nnamani Stephen O" };
-
-foreach(string name in list)
+public class program
 {
-    Console.WriteLine($"> Dev {name}");
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Team 2\n*****Developers*****");
+        string[] list = new string[] { "Stanley Okonkwo", "Chinenye Maryrose Okeke", "Nnamani Stephen O" };
+
+        foreach (string name in list)
+        {
+            Console.WriteLine($"> Dev {name}");
+        }
+
+
+        //Creating Database....Database name = EFCoreAtmAppDatabase
+        AtmDbContextFactory atmDb = new();
+        var dbContext = atmDb.CreateDbContext(null);
+        
+    }
 }
+
