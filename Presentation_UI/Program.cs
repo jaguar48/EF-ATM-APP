@@ -25,8 +25,16 @@ public class program
         accountNumber = Console.ReadLine();
         Console.Write("Enter your Login Pin: ");
         pin = Console.ReadLine();
+<<<<<<< HEAD
         Customers loggedUser = await customerOperation.Login(accountNumber, pin);
         Console.WriteLine($"Welcome {loggedUser.AccountName}");
+=======
+        customerOperation.Login(accountNumber, pin);
+        
+
+        
+               
+>>>>>>> 98946fad6a83dfbc214a39eed36ee1dd8b0300b3
     }
 }
 

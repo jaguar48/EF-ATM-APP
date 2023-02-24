@@ -1,8 +1,5 @@
 ﻿using Data_PLL;
 using Data_PLL.Entities;
-using Domain_BLL.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace Domain_BLL.Implementations
 {
-    public class CustomerOperation : ICustomerOperations
+    public class CustomerOperation
     {
 
         private readonly AtmDbContextFactory _atmDb;
-
 
         public CustomerOperation()
         {
@@ -55,13 +51,14 @@ namespace Domain_BLL.Implementations
 
                     
                 }
-
+                
               
                 await context.SaveChangesAsync();
             }
        
         }
 
+<<<<<<< HEAD
 
         public async Task<Customers> Login(string accountNumber, string pin)
         {
@@ -101,5 +98,9 @@ public void Deposit()
         {
             throw new NotImplementedException();
         }
+=======
+            
+>>>>>>> 98946fad6a83dfbc214a39eed36ee1dd8b0300b3
     }
 }
+
