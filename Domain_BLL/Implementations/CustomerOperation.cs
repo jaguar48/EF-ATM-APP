@@ -1,5 +1,6 @@
 ﻿using Data_PLL;
 using Data_PLL.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +19,6 @@ namespace Domain_BLL.Implementations
             _atmDb = new AtmDbContextFactory();
         }
         public async Task  Customeroperation() {
-        
-
-
             var customerViewModels = CustomerList.GetCustomers();
 
 
@@ -57,8 +55,20 @@ namespace Domain_BLL.Implementations
             }
        
         }
+        public async Task<Customers> Login(string accountNumber, string pin)
+        {
+            Customers LoggedCustomer;
+            using (var context = _atmDb.CreateDbContext(null))
+            {
+               
+                var customers = await context.Customers.Where(c => c.AccountNumber.Contains(accountNumber) && c.Pin.Contains(pin)).FirstOrDefaultAsync();
 
-            
+                
+                LoggedCustomer = customers;
+            }
+            return LoggedCustomer;
+        }
+       
     }
 }
 
