@@ -38,3 +38,5 @@ C:\Users\HP\Source\Repos\EF-ATM-APP\Data_PLL\obj\Debug\net6.0\refint\Data_PLL.dl
 C:\Users\HP\Source\Repos\EF-ATM-APP\Data_PLL\obj\Debug\net6.0\Data_PLL.pdb
 C:\Users\HP\Source\Repos\EF-ATM-APP\Data_PLL\obj\Debug\net6.0\Data_PLL.genruntimeconfig.cache
 C:\Users\HP\Source\Repos\EF-ATM-APP\Data_PLL\obj\Debug\net6.0\ref\Data_PLL.dll
+C:\Users\STephenScripts\Desktop\C# Apps\Test EFKore\EF-ATM-APP\Data_PLL\bin\Debug\net6.0\Data_PLL.runtimeconfig.json
+C:\Users\STephenScripts\Desktop\C# Apps\Test EFKore\EF-ATM-APP\Data_PLL\obj\Debug\net6.0\Data_PLL.genruntimeconfig.cache

@@ -704,7 +704,8 @@
       },
       "Domain_BLL/1.0.0": {
         "dependencies": {
-          "Data_PLL": "1.0.0"
+          "Data_PLL": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3"
         },
         "runtime": {
           "Domain_BLL.dll": {}

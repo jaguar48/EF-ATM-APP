@@ -1162,7 +1162,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Data_PLL": "1.0.0"
+          "Data_PLL": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3"
         },
         "compile": {
           "bin/placeholder/Domain_BLL.dll": {}
