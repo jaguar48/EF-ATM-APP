@@ -116,6 +116,15 @@ namespace Domain_BLL.Implementations
                     Pin = "7443",
                     Balance = 86020.00m,
                     DateCreated = DateTime.Now
+                },
+                new CustomerViewModel
+                {
+                    FirstName = "paul",
+                    LastName = "okafor",
+                    AccountNumber = "922828225",
+                    Pin = "7443",
+                    Balance = 86020.00m,
+                    DateCreated = DateTime.Now
                 }
 
         };

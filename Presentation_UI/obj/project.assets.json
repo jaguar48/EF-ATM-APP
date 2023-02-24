@@ -3515,11 +3515,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Presentation_UI\\Presentation_UI.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\EF-ATM-APP\\Presentation_UI\\Presentation_UI.csproj",
       "projectName": "Presentation_UI",
-      "projectPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Presentation_UI\\Presentation_UI.csproj",
+      "projectPath": "C:\\Users\\HP\\source\\repos\\EF-ATM-APP\\Presentation_UI\\Presentation_UI.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Presentation_UI\\obj\\",
+      "outputPath": "C:\\Users\\HP\\source\\repos\\EF-ATM-APP\\Presentation_UI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3536,8 +3536,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj": {
-              "projectPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj"
+            "C:\\Users\\HP\\source\\repos\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj": {
+              "projectPath": "C:\\Users\\HP\\source\\repos\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj"
             }
           }
         }

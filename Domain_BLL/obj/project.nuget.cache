@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q90ZWY2+DG6KPP9xrBFFqOb0nkMkuYZUQSh73XfrkjxvRIRNe+oM/Hd8KkjzbyOlsTUQ0iUMVexH2jwL7cu7tw==",
+  "dgSpecHash": "PXMI2lAmRYl7aks+URp+65ZSPvPg3WDFp/OxtmDigOkdM3GfGGc0vfmquf+S0YKuK4J670Ay2gt8QrdSXjGwpQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj",
+  "projectFilePath": "C:\\Users\\HP\\source\\repos\\EF-ATM-APP\\Domain_BLL\\Domain_BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
