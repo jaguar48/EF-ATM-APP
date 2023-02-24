@@ -5,7 +5,7 @@ namespace Domain_BLL.Interfaces
 {
     public interface ICustomerOperations
     {
-        Customers Login(string accountNumber, string pin);
+        Task<Customers> Login(string accountNumber, string pin);
         void Withdrawal();
         void Deposit();
         void Transfer();

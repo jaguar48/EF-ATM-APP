@@ -63,20 +63,16 @@ namespace Domain_BLL.Implementations
         }
 
 
-        public Customers Login(string accountNumber, string pin)
+        public async Task<Customers> Login(string accountNumber, string pin)
         {
             Customers LoggedCustomer;
             using (var context = _atmDb.CreateDbContext(null))
             {
                 // Query the database using LINQ syntax
-                var customers = context.Customers.Where(c => c.AccountNumber.Contains(accountNumber) && c.Pin.Contains(pin));
+                var customers = await context.Customers.Where(c => c.AccountNumber.Contains(accountNumber) && c.Pin.Contains(pin)).FirstOrDefaultAsync();
 
                 // Do something with the results
-                foreach (var customer in customers)
-                {
-                    Console.WriteLine($"Welcome {customer.AccountName} \t || {customer.DateCreated}");
-                }
-                LoggedCustomer = (Customers)customers;
+                LoggedCustomer = customers;
             }
             return LoggedCustomer;
         }
