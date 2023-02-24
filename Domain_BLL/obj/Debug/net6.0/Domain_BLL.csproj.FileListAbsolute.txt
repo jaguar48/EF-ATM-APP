@@ -45,3 +45,5 @@ C:\Users\HP\Source\Repos\EF-ATM-APP\Domain_BLL\obj\Debug\net6.0\Domain_BLL.pdb
 C:\Users\HP\Source\Repos\EF-ATM-APP\Domain_BLL\obj\Debug\net6.0\ref\Domain_BLL.dll
 C:\Users\STephenScripts\Desktop\C# Apps\Test EFKore\EF-ATM-APP\Domain_BLL\bin\Debug\net6.0\Domain_BLL.runtimeconfig.json
 C:\Users\STephenScripts\Desktop\C# Apps\Test EFKore\EF-ATM-APP\Domain_BLL\obj\Debug\net6.0\Domain_BLL.genruntimeconfig.cache
+C:\Users\MyPC\Source\Repos\EF-ATM-APP\Domain_BLL\bin\Debug\net6.0\Domain_BLL.runtimeconfig.json
+C:\Users\MyPC\Source\Repos\EF-ATM-APP\Domain_BLL\obj\Debug\net6.0\Domain_BLL.genruntimeconfig.cache
