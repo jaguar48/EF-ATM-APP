@@ -3511,19 +3511,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {}
+    "C:\\Users\\MyPC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
+      "projectUniqueName": "C:\\Users\\MyPC\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
       "projectName": "Data_PLL",
-      "projectPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\obj\\",
+      "projectPath": "C:\\Users\\MyPC\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\Data_PLL.csproj",
+      "packagesPath": "C:\\Users\\MyPC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MyPC\\Source\\Repos\\EF-ATM-APP\\Data_PLL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MyPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3586,7 +3586,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
