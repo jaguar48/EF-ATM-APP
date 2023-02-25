@@ -12,7 +12,7 @@ public class program
             Console.WriteLine($"> Dev {name}");
         }
 
-
+        Console.WriteLine("test");
         //Creating Database....Database name = EFCoreAtmAppDatabase
         AtmDbContextFactory atmDb = new();
         var dbContext = atmDb.CreateDbContext(null);
