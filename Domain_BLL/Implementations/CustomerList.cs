@@ -77,7 +77,7 @@ namespace Domain_BLL.Implementations
                     FirstName = "bishop",
                     LastName = "okonkwo",
                     AccountNumber = "4338838337",
-                    Pin = "33888",
+                    Pin = "3388",
                     Balance = 325020.00m,
                     DateCreated = DateTime.Now
                 },
@@ -86,7 +86,7 @@ namespace Domain_BLL.Implementations
                     FirstName = "micheal",
                     LastName = "orjiakor",
                     AccountNumber = "27920222",
-                    Pin = "33888",
+                    Pin = "3888",
                     Balance = 325020.00m,
                     DateCreated = DateTime.Now
                 },
@@ -131,7 +131,7 @@ namespace Domain_BLL.Implementations
 
             return customers;
 
-            /* foreach (var customer in customers)
+            /*foreach (var customer in customers)
              {
 
 

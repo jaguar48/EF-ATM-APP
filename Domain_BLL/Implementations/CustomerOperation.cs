@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Domain_BLL.Implementations
 {
-    public class CustomerOperation:ICustomerOperations
+    public class CustomerOperation : ICustomerOperations
     {
 
         private readonly AtmDbContextFactory _atmDb;
@@ -60,9 +60,37 @@ namespace Domain_BLL.Implementations
        
         }
 
-        public void Deposit()
+        public async Task<CustomerViewModel> DepositAsync(string accountNumber, string pin, decimal amount)
         {
-            throw new NotImplementedException();
+
+            using var context = _atmDb.CreateDbContext(null);
+
+            var customer = await context.Customers.SingleOrDefaultAsync(x => x.AccountNumber == accountNumber && x.Pin == pin);
+
+            if (customer == null)
+            {
+                Console.WriteLine("Invalid account number or PIN.");
+                return null;
+            }
+            if (amount == 0)
+            {
+                Console.WriteLine("Invalid amount.");
+                return null;
+            }
+
+
+            customer.Balance += amount;
+            await context.SaveChangesAsync();
+
+            var customerViewModel = new CustomerViewModel
+            {
+
+                AccountNumber = customer.AccountNumber,
+                Balance = customer.Balance
+            };
+
+            Console.WriteLine($"You have successfully made a deposit of {amount}. New balance is {customer.Balance:C}.");
+            return customerViewModel;
         }
 
         public async Task<Customers> Login(string accountNumber, string pin)
@@ -150,7 +178,7 @@ namespace Domain_BLL.Implementations
 
                     Console.WriteLine($"Account balance for {customer.AccountName}: {customer.Balance:C}");
                 }
-                catch (InvalidOperationException ex)
+                catch (InvalidOperationException)
                 {
                     Console.WriteLine("Error: Multiple customers with the same account number and PIN.");
                    

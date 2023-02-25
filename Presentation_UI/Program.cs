@@ -10,6 +10,7 @@ public class program
     public static async Task Main(string[] args)
     {
         CustomerOperation customerOperation = new CustomerOperation();
+        await customerOperation.Customeroperation();
         
         string accountNumber;
         string pin;
@@ -33,6 +34,7 @@ public class program
             Console.WriteLine("1. Check balance");
             
             Console.WriteLine("2. Withdraw");
+            Console.WriteLine("3. Deposit");
             Console.WriteLine("4. Exit");
 
             int option;
@@ -56,6 +58,15 @@ public class program
                     }
                     await customerOperation.WithdrawAsync(loggedUser.AccountNumber, loggedUser.Pin, withdrawAmount);
                    
+                    break;
+                case 3:
+                    Console.WriteLine("Enter the amount to deposit: ");
+                    decimal depositAmount;
+                    while(!Decimal.TryParse(Console.ReadLine(), out depositAmount))
+                    {
+                        Console.WriteLine("Invalid amount. Please enter a number.");
+                    }
+                    await customerOperation.DepositAsync(loggedUser.AccountNumber, loggedUser.Pin, depositAmount);
                     break;
                 case 4:
                     Console.WriteLine("Exiting...");
