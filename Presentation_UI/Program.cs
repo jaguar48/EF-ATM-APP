@@ -11,6 +11,8 @@ public class program
     {
         CustomerOperation customerOperation = new CustomerOperation();
 
+        customerOperation.AddCustomers();
+
         string accountNumber;
         string pin;
         Console.Write("Enter your Account Number: ");

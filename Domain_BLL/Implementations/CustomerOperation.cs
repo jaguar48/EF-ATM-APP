@@ -21,10 +21,9 @@ namespace Domain_BLL.Implementations
             _atmDb = new AtmDbContextFactory();
         }
 
-      
-        public async Task  Customeroperation() {
+        
+        public async Task  AddCustomers() {
             var customerViewModels = CustomerList.GetCustomers();
-
 
             using (var context = _atmDb.CreateDbContext(null))
             {
@@ -51,7 +50,6 @@ namespace Domain_BLL.Implementations
                     };
                     await context.Customers.AddRangeAsync(newCustomer);
 
-                    
                 }
                 
               
