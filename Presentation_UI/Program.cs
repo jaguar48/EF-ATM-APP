@@ -57,6 +57,25 @@ public class program
                     await customerOperation.WithdrawAsync(loggedUser.AccountNumber, loggedUser.Pin, withdrawAmount);
                    
                     break;
+                case 3:
+                    string receiverAcc;
+                    Console.Write("Enter the Receiver's Account: ");
+                    receiverAcc = Console.ReadLine();
+                    here:
+                    Console.Write("Enter the amount to Transfer: ");
+                    decimal TransferAmount;
+                    while (!decimal.TryParse(Console.ReadLine(), out TransferAmount))
+                    {
+                        Console.WriteLine("Invalid amount. Please enter a number.");
+                        
+                    }
+                    if (TransferAmount < 1)
+                    {
+                        Console.WriteLine("Invalid amount");
+                        goto here;
+                    }
+                    await customerOperation.Transfer(loggedUser.AccountNumber, loggedUser.Pin, receiverAcc, TransferAmount); 
+                    break;
                 case 4:
                     Console.WriteLine("Exiting...");
                     return;

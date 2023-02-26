@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -89,9 +90,46 @@ namespace Domain_BLL.Implementations
             throw new NotImplementedException();
         }
 
-        public void Transfer()
+        public async Task<string> Transfer(string accountNumber, string pin, string receiverAcc, decimal TransferAmount)
         {
-            throw new NotImplementedException();
+            using (var context = _atmDb.CreateDbContext(null))
+            {
+                var customer = await context.Customers.SingleOrDefaultAsync(x => x.AccountNumber == accountNumber && x.Pin == pin);
+
+                if (customer == null)
+                {
+                    Console.WriteLine("Invalid account number or PIN.");
+                    return null;
+                }
+
+                if (TransferAmount <= 0)
+                {
+                    Console.WriteLine("Invalid amount to withdraw.");
+                    return null;
+                }
+
+                if (TransferAmount > customer.Balance)
+                {
+                    Console.WriteLine("Insufficient funds.");
+                    return null;
+                }
+                var receiver = await context.Customers.FirstOrDefaultAsync(x => x.AccountNumber == accountNumber);
+
+                customer.Balance -= TransferAmount;
+                receiver.Balance += TransferAmount;
+
+                await context.SaveChangesAsync();
+
+                var customerViewModel = new CustomerViewModel
+                {
+
+                    AccountNumber = customer.AccountNumber,
+                    Balance = customer.Balance
+                };
+
+                string output = $"Withdrawal of {TransferAmount} successful. New balance is {customer.Balance:C}.";
+                return output;
+            }
         }
 
         public async Task<CustomerViewModel> WithdrawAsync(string accountNumber, string pin, decimal amount)
@@ -152,16 +190,11 @@ namespace Domain_BLL.Implementations
                 }
                 catch (InvalidOperationException ex)
                 {
-                    Console.WriteLine("Error: Multiple customers with the same account number and PIN.");
-                   
+                    Console.WriteLine($"{ex.Message} \nError: Multiple customers with the same account number and PIN.");
+
                 }
             }
         }
-
-
-
-
-
 
     }
 }
