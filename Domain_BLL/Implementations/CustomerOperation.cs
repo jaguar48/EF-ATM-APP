@@ -132,7 +132,7 @@ namespace Domain_BLL.Implementations
             }
         }
 
-        public async Task<CustomerViewModel> WithdrawAsync(string accountNumber, string pin, decimal amount)
+        public async Task<string> WithdrawAsync(string accountNumber, string pin, decimal amount)
         {
             using (var context = _atmDb.CreateDbContext(null))
             {
@@ -159,15 +159,8 @@ namespace Domain_BLL.Implementations
                 customer.Balance -= amount;
                 await context.SaveChangesAsync();
 
-                var customerViewModel = new CustomerViewModel
-                {
-                    
-                    AccountNumber = customer.AccountNumber,
-                    Balance = customer.Balance
-                };
-
-                Console.WriteLine($"Withdrawal of {amount} successful. New balance is {customer.Balance:C}.");
-                return customerViewModel;
+                string output = $"Withdrawal of {amount} successful. New balance is {customer.Balance:C}.";
+                return output;
             }
         }
 
