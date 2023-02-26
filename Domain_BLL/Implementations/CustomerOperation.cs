@@ -16,6 +16,7 @@ namespace Domain_BLL.Implementations
     {
 
         private readonly AtmDbContextFactory _atmDb;
+        private StringBuilder transactionHistory = new();
 
         public CustomerOperation()
         {
@@ -96,15 +97,22 @@ namespace Domain_BLL.Implementations
             {
                 var customer = await context.Customers.SingleOrDefaultAsync(x => x.AccountNumber == accountNumber && x.Pin == pin);
 
+                if (receiverAcc == customer.AccountNumber)
+                {
+                    Console.WriteLine("You can't Transfer to self :(");
+                    return null;
+                }
+
                 if (customer == null)
                 {
                     Console.WriteLine("Invalid account number or PIN.");
                     return null;
                 }
 
+
                 if (TransferAmount <= 0)
                 {
-                    Console.WriteLine("Invalid amount to withdraw.");
+                    Console.WriteLine("Invalid amount to Transfer.");
                     return null;
                 }
 
@@ -113,6 +121,7 @@ namespace Domain_BLL.Implementations
                     Console.WriteLine("Insufficient funds.");
                     return null;
                 }
+
                 var receiver = await context.Customers.FirstOrDefaultAsync(x => x.AccountNumber == accountNumber);
 
                 customer.Balance -= TransferAmount;
@@ -127,7 +136,8 @@ namespace Domain_BLL.Implementations
                     Balance = customer.Balance
                 };
 
-                string output = $"Withdrawal of {TransferAmount} successful. New balance is {customer.Balance:C}.";
+                string output = $"{DateTime.UtcNow}\nTransfer of {TransferAmount} successful. New balance is {customer.Balance:C}.";
+                transactionHistory.Append(output);
                 return output;
             }
         }
@@ -159,7 +169,8 @@ namespace Domain_BLL.Implementations
                 customer.Balance -= amount;
                 await context.SaveChangesAsync();
 
-                string output = $"Withdrawal of {amount} successful. New balance is {customer.Balance:C}.";
+                string output = $"{DateTime.UtcNow}\nWithdrawal of {amount} successful. New balance is {customer.Balance:C}.";
+                transactionHistory.Append(output);
                 return output;
             }
         }
@@ -187,6 +198,11 @@ namespace Domain_BLL.Implementations
 
                 }
             }
+        }
+
+        public void TransactionHistory()
+        {
+            Console.WriteLine(transactionHistory);
         }
 
     }

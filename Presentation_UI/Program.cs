@@ -31,9 +31,10 @@ public class program
         {
             Console.WriteLine("Enter an option:");
             Console.WriteLine("1. Check balance");
-            
             Console.WriteLine("2. Withdraw");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("3. Transfer");
+            Console.WriteLine("4. Transaction History");
+            Console.WriteLine("5. Exit");
 
             int option;
             while (!int.TryParse(Console.ReadLine(), out option))
@@ -77,6 +78,9 @@ public class program
                     await customerOperation.Transfer(loggedUser.AccountNumber, loggedUser.Pin, receiverAcc, TransferAmount); 
                     break;
                 case 4:
+                    customerOperation.TransactionHistory();
+                    break;
+                case 5:
                     Console.WriteLine("Exiting...");
                     return;
                 default:
