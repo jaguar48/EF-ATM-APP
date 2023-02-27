@@ -15,7 +15,7 @@ namespace Data_PLL
         {
             var optionsBuilder = new DbContextOptionsBuilder<AtmDbContext>();
 
-            string connectionString = @"Data Source=DESKTOP-BJR8R95\SQLEXPRESS;Initial Catalog=EFCoreAtmAppDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string connectionString = @"Data Source=.;Initial Catalog=EFCoreAtmAppDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             optionsBuilder.UseSqlServer(connectionString, options =>
             {
