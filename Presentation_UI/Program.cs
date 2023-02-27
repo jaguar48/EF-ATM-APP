@@ -2,15 +2,23 @@
 using Data_PLL.Entities;
 using Domain_BLL;
 using Domain_BLL.Implementations;
+using Presentation_UI.Utility;
 using System.Net.NetworkInformation;
-
+using System.Reflection.Metadata.Ecma335;
 
 public class program
 {
     public static async Task Main(string[] args)
     {
         CustomerOperation customerOperation = new CustomerOperation();
-
+        try
+        {
+            await customerOperation.Customeroperation();
+        }
+        catch
+        {
+            return;
+        }
         string accountNumber;
         string pin;
         Console.Write("Enter your Account Number: ");
@@ -55,13 +63,21 @@ public class program
                     {
                         Console.WriteLine("Invalid amount. Please enter a number.");
                     }
-                    await customerOperation.WithdrawAsync(loggedUser.AccountNumber, loggedUser.Pin, withdrawAmount);
-                   
+                    string outputW = await customerOperation.WithdrawAsync(loggedUser.AccountNumber, loggedUser.Pin, withdrawAmount);
+                    LineAndColorModes.Display(outputW);
                     break;
                 case 3:
+                    Console.Clear();
+                    OperationsTable.TransferTable();
                     string receiverAcc;
+                    recv:
                     Console.Write("Enter the Receiver's Account: ");
                     receiverAcc = Console.ReadLine();
+                    if(receiverAcc.Count() != 10)
+                    {
+                        Console.WriteLine("Incomplete Receiver's account, try again");
+                        goto recv;
+                    }
                     here:
                     Console.Write("Enter the amount to Transfer: ");
                     decimal TransferAmount;
@@ -75,7 +91,8 @@ public class program
                         Console.WriteLine("Invalid amount");
                         goto here;
                     }
-                    await customerOperation.Transfer(loggedUser.AccountNumber, loggedUser.Pin, receiverAcc, TransferAmount); 
+                    string outputT = await customerOperation.Transfer(loggedUser.AccountNumber, loggedUser.Pin, receiverAcc, TransferAmount);
+                    LineAndColorModes.Display(outputT);
                     break;
                 case 4:
                     customerOperation.TransactionHistory();

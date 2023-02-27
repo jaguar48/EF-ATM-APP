@@ -4,6 +4,7 @@ using Domain_BLL.Interfaces;
 using Domain_BLL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -16,7 +17,7 @@ namespace Domain_BLL.Implementations
     {
 
         private readonly AtmDbContextFactory _atmDb;
-        private StringBuilder transactionHistory = new();
+        private StringBuilder transactionHistory;
 
         public CustomerOperation()
         {
@@ -93,52 +94,76 @@ namespace Domain_BLL.Implementations
 
         public async Task<string> Transfer(string accountNumber, string pin, string receiverAcc, decimal TransferAmount)
         {
+
+            string transactiontype = "transfer";
             using (var context = _atmDb.CreateDbContext(null))
             {
                 var customer = await context.Customers.SingleOrDefaultAsync(x => x.AccountNumber == accountNumber && x.Pin == pin);
-
+                string returnWord;
                 if (receiverAcc == customer.AccountNumber)
                 {
-                    Console.WriteLine("You can't Transfer to self :(");
-                    return null;
+                    returnWord = "You can't Transfer to self :(";
+                    return returnWord;
                 }
+
+                Console.Write("Purpose of transfer: ");
+                string remark = Console.ReadLine();
 
                 if (customer == null)
                 {
-                    Console.WriteLine("Invalid account number or PIN.");
-                    return null;
+                    returnWord = "Invalid account number or PIN.";
+                    return returnWord;
                 }
 
 
                 if (TransferAmount <= 0)
                 {
-                    Console.WriteLine("Invalid amount to Transfer.");
-                    return null;
+                    returnWord = "Invalid amount to Transfer.";
+                    return returnWord;
                 }
 
                 if (TransferAmount > customer.Balance)
                 {
-                    Console.WriteLine("Insufficient funds.");
+                    returnWord = "Insufficient funds.";
+                    return returnWord;
+                }
+
+                var receiver = await context.Customers.FirstOrDefaultAsync(x => x.AccountNumber == receiverAcc);
+                if(receiver == null)
+                {
+                    returnWord = "Sorry, but the receiver's account could not be found";
+                    return returnWord;
+                }
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine($"\n{customer.AccountName}, you are about to send {TransferAmount:C} to {receiver.AccountName}\n" +
+                    $"press any key to continue");
+                Console.ResetColor();
+                var key = Console.ReadKey();
+                if(key.KeyChar == 0)
+                {
                     return null;
                 }
 
-                var receiver = await context.Customers.FirstOrDefaultAsync(x => x.AccountNumber == accountNumber);
-
                 customer.Balance -= TransferAmount;
                 receiver.Balance += TransferAmount;
+                
+
+                var transactionHistory = new TransactionHistory
+                {
+                    TransactionDate = DateTime.UtcNow,
+                    TransactionType = transactiontype,
+                    CustomersId= customer.Id,
+                    Remark = remark
+                };
+                string outputSender = $"{transactionHistory.TransactionDate}\nTransfer of {TransferAmount} successful. New balance is {customer.Balance:C}.";
+                Console.WriteLine();
+                List<TransactionHistory> history = new List<TransactionHistory>();
+                history.Append(transactionHistory);
+
 
                 await context.SaveChangesAsync();
 
-                var customerViewModel = new CustomerViewModel
-                {
-
-                    AccountNumber = customer.AccountNumber,
-                    Balance = customer.Balance
-                };
-
-                string output = $"{DateTime.UtcNow}\nTransfer of {TransferAmount} successful. New balance is {customer.Balance:C}.";
-                transactionHistory.Append(output);
-                return output;
+                return outputSender;
             }
         }
 
@@ -170,7 +195,7 @@ namespace Domain_BLL.Implementations
                 await context.SaveChangesAsync();
 
                 string output = $"{DateTime.UtcNow}\nWithdrawal of {amount} successful. New balance is {customer.Balance:C}.";
-                transactionHistory.Append(output);
+                //transactionHistory.Append(output);
                 return output;
             }
         }
