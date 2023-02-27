@@ -10,9 +10,9 @@ public class program
 {
     public static async Task Main(string[] args)
     {
-        Console.WriteLine("=================================================");
+        Console.WriteLine("===============================================");
         Console.WriteLine("THE GROUP THREE ATM APP");
-        Console.WriteLine("=================================================");
+        Console.WriteLine("===============================================");
         CustomerOperation customerOperation = new CustomerOperation();
         try
         {
