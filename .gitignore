@@ -3,6 +3,15 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+
+# Ignore Data.DLL and Domain.BLL Folders
+Data_PLL/bin/
+Data_PLL/obj/
+Domain_BLL/bin/
+Domain_BLL/obj/
+
+
+
 # User-specific files
 *.rsuser
 *.suo
