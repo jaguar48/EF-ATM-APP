@@ -11,13 +11,21 @@ public class program
     {
         CustomerOperation customerOperation = new CustomerOperation();
         await customerOperation.Customeroperation();
-        
+
         string accountNumber;
         string pin;
         Console.Write("Enter your Account Number: ");
         accountNumber = Console.ReadLine();
         Console.Write("Enter your Login Pin: ");
         pin = Console.ReadLine();
+
+
+        if (string.IsNullOrEmpty(accountNumber) || string.IsNullOrEmpty(pin))
+        {
+            Console.WriteLine("Invalid account number or PIN.");
+            return;
+        }
+
 
         Customers loggedUser = await customerOperation.Login(accountNumber, pin);
         if (loggedUser == null)
