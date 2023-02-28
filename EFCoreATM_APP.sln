@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation_UI", "Presentation_UI\Presentation_UI.csproj", "{117C5B0E-2785-4758-998E-133BFB07622F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation_UI", "Presentation_UI\Presentation_UI.csproj", "{117C5B0E-2785-4758-998E-133BFB07622F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain_BLL", "Domain_BLL\Domain_BLL.csproj", "{E474BA51-85B6-4A9A-9C82-E0140F3F1396}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain_BLL", "Domain_BLL\Domain_BLL.csproj", "{E474BA51-85B6-4A9A-9C82-E0140F3F1396}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data_PLL", "Data_PLL\Data_PLL.csproj", "{9AB84943-D30C-44D5-9B7E-29F4EBB563BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data_PLL", "Data_PLL\Data_PLL.csproj", "{9AB84943-D30C-44D5-9B7E-29F4EBB563BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +32,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {44A8D6AA-D114-447B-9A5C-67F65DE0C5AF}
+		SolutionGuid = {1264D8CA-3169-49FA-8D53-E2387C086BFA}
 	EndGlobalSection
 EndGlobal

@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -65,7 +66,8 @@ namespace Domain_BLL.Implementations
 
             using var context = _atmDb.CreateDbContext(null);
 
-            var customer = await context.Customers.SingleOrDefaultAsync(x => x.AccountNumber == accountNumber && x.Pin == pin);
+            var customer = await context.Customers.FirstOrDefaultAsync(x => x.AccountNumber == accountNumber && x.Pin == pin);
+
 
             if (customer == null)
             {
@@ -107,26 +109,16 @@ namespace Domain_BLL.Implementations
             return LoggedCustomer;
         }
 
-        public void PayBills()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RechargeCard()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Transfer()
-        {
-            throw new NotImplementedException();
-        }
+  
 
         public async Task<CustomerViewModel> WithdrawAsync(string accountNumber, string pin, decimal amount)
         {
             using (var context = _atmDb.CreateDbContext(null))
             {
-                var customer = await context.Customers.SingleOrDefaultAsync(x => x.AccountNumber == accountNumber && x.Pin == pin);
+
+                var customer = await context.Customers.FirstOrDefaultAsync(x => x.AccountNumber == accountNumber && x.Pin == pin);
+
+               
 
                 if (customer == null)
                 {
@@ -185,6 +177,59 @@ namespace Domain_BLL.Implementations
                 }
             }
         }
+        public async Task<bool> TransferAsync(string senderAccountNumber, string senderPin, string recipientAccountNumber, decimal amount)
+        {
+            using (var context = _atmDb.CreateDbContext(null))
+            {
+
+                var sender = await context.Customers.FirstOrDefaultAsync(x => x.AccountNumber == senderAccountNumber && x.Pin == senderPin);
+
+                if (sender == null)
+                {
+                    Console.WriteLine("Invalid account number or PIN.");
+                    return false;
+                }
+
+                
+
+                var recipient = await context.Customers.FirstOrDefaultAsync(x => x.AccountNumber == recipientAccountNumber);
+
+                if (recipient == null)
+                {
+                    Console.WriteLine("Recipient account not found.");
+                    return false;
+                }
+
+                if (amount <= 0)
+                {
+                    Console.WriteLine("Invalid transfer amount.");
+                    return false;
+                }
+
+                if (amount > sender.Balance)
+                {
+                    Console.WriteLine("Insufficient funds.");
+                    return false;
+                }
+
+                if (senderAccountNumber == recipientAccountNumber)
+                {
+                    Console.WriteLine("You cannot transfer funds to your own account.");
+                    return false;
+                }
+
+                sender.Balance -= amount;
+                recipient.Balance += amount;
+
+                await context.SaveChangesAsync();
+
+                Console.WriteLine($"Transfer successful. {sender.AccountName} transferred {amount:C} to {recipient.AccountName}.");
+
+                return true;
+            }
+        }
+
+
 
 
 
