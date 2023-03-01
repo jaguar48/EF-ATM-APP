@@ -10,8 +10,7 @@ namespace Domain_BLL.Interfaces
         Task<CustomerViewModel> WithdrawAsync(string accountNumber, string pin, decimal amount);
         Task CheckBalanceAsync(string accountNumber, string pin);
         Task<CustomerViewModel> DepositAsync(string accountNumber, string pin, decimal amount);
-        void Transfer();    
-        void RechargeCard();
-        void PayBills();
+        Task TransferAsync(string accountNumber, string pin, string receiverAcc, decimal TransferAmount);    
+        
     }
 }

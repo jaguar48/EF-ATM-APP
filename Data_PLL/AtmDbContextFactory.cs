@@ -15,7 +15,7 @@ namespace Data_PLL
         {
             var optionsBuilder = new DbContextOptionsBuilder<AtmDbContext>();
 
-            string connectionString = @"Data Source=.;Initial Catalog=EFCoreAtmAppDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string connectionString = @"Data Source=LAPTOP-AI62M7MS\SQLEXPRESS;Initial Catalog=EFCoreAtmAppDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             optionsBuilder.UseSqlServer(connectionString, options =>
             {
@@ -28,7 +28,7 @@ namespace Data_PLL
                 try
                 {
                     dbContext.Database.OpenConnection();
-                    Console.WriteLine("Database connection successful.");
+                   
                 }
                 catch (Exception ex)
                 {

@@ -12,10 +12,12 @@ public class program
         CustomerOperation customerOperation = new CustomerOperation();
         await customerOperation.Customeroperation();
 
-        Console.WriteLine("Group 2");
 
         string accountNumber;
         string pin;
+
+        Console.WriteLine(".......Welcome to Wahala ATM.......\n");
+
         Console.Write("Enter your Account Number: ");
         accountNumber = Console.ReadLine();
         Console.Write("Enter your Login Pin: ");
@@ -37,7 +39,9 @@ public class program
             
             Console.WriteLine("2. Withdraw");
             Console.WriteLine("3. Deposit");
-            Console.WriteLine("4. Exit");
+
+            Console.WriteLine("4. Transfer");
+            Console.WriteLine("5. Exit");
 
             int option;
             while (!int.TryParse(Console.ReadLine(), out option))
@@ -71,6 +75,17 @@ public class program
                     await customerOperation.DepositAsync(loggedUser.AccountNumber, loggedUser.Pin, depositAmount);
                     break;
                 case 4:
+                    Console.WriteLine("Enter the amount to Transfer: ");
+                    decimal TransferAmount;
+                    while (!Decimal.TryParse(Console.ReadLine(), out TransferAmount))
+                    {
+                        Console.WriteLine("Invalid amount. Please enter a number.");
+                    }
+                    Console.WriteLine("Enter the Account Number of the reciever: ");
+                    string recieverAccountNunber = Console.ReadLine();
+                    await customerOperation.TransferAsync(loggedUser.AccountNumber, loggedUser.Pin, recieverAccountNunber, TransferAmount);
+                    break;
+                case 5:
                     Console.WriteLine("Exiting...");
                     return;
                 default:

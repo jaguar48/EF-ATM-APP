@@ -107,19 +107,60 @@ namespace Domain_BLL.Implementations
             return LoggedCustomer;
         }
 
-        public void PayBills()
-        {
-            throw new NotImplementedException();
-        }
 
-        public void RechargeCard()
+        public async Task TransferAsync(string accountNumber, string pin, string receiverAccountNo, decimal TransferAmount)
         {
-            throw new NotImplementedException();
-        }
 
-        public void Transfer()
-        {
-            throw new NotImplementedException();
+            using (var context = _atmDb.CreateDbContext(null))
+            {
+                var customer = await context.Customers.SingleOrDefaultAsync(x => x.AccountNumber == accountNumber && x.Pin == pin);
+                
+                if (receiverAccountNo == customer.AccountNumber)
+                {
+                    Console.WriteLine("You can't Transfer to self :("); 
+                }
+
+                Console.Write("Narration: ");
+                string remark = Console.ReadLine();
+
+                if (customer == null)
+                {
+                   Console.WriteLine("Invalid account number or PIN.");
+                    
+                }
+
+
+                if (TransferAmount <= 0)
+                {
+                    Console.WriteLine("Invalid amount to Transfer.");
+                    
+                }
+
+                if (TransferAmount > customer.Balance)
+                {
+                    Console.WriteLine("Insufficient funds.");
+                }
+
+                var receiver = await context.Customers.FirstOrDefaultAsync(x => x.AccountNumber == receiverAccountNo);
+                if (receiver == null)
+                {
+                    Console.WriteLine("Sorry, but the receiver's account could not be found");
+                    
+                }
+                
+                Console.WriteLine($"\nYou are about to send {TransferAmount:C} to {receiver.AccountName}\n" +
+                    $"press any key to continue");
+               
+                Console.ReadKey();
+
+                customer.Balance -= TransferAmount;
+                receiver.Balance += TransferAmount;
+
+                await context.SaveChangesAsync();
+
+                Console.WriteLine($"Transfer Successful!");
+                
+            }
         }
 
         public async Task<CustomerViewModel> WithdrawAsync(string accountNumber, string pin, decimal amount)

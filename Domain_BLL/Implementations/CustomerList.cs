@@ -1,5 +1,4 @@
-﻿using Data_PLL.Entities;
-using Domain_BLL.Models;
+﻿using Domain_BLL.Models;
 
 namespace Domain_BLL.Implementations
 {
@@ -98,7 +97,7 @@ namespace Domain_BLL.Implementations
                     Pin = "6443",
                     Balance = 36020.00m,
                     DateCreated = DateTime.Now
-                },  
+                },
                 new CustomerViewModel
                 {
                     FirstName = "mark",
